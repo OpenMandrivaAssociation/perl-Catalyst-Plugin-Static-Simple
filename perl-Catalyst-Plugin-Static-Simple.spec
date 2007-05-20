@@ -2,7 +2,7 @@
 %define name	perl-%{module}
 %define	modprefix Catalyst
 
-%define version	0.15
+%define version	0.17
 %define release	%mkrel 1
 
 Summary:	Make serving static pages painless
@@ -12,7 +12,7 @@ Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.bz2
+Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.gz
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
@@ -41,15 +41,15 @@ through Catalyst.
 ##sed -i.DOS -e 's/\r//g' README
 
 %build
-%__perl Build.PL installdirs=vendor
-./Build
+%__perl Makefile.PL installdirs=vendor
+%make
 
 %check
-./Build test
+make test
 
 %install
 %{__rm} -rf %{buildroot}
-./Build install destdir=%buildroot
+%makeinstall_std
 
 %files
 %defattr(-,root,root)
