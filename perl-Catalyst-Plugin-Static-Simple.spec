@@ -20,7 +20,6 @@ BuildRequires:	perl(Catalyst) >= 5.70
 BuildRequires:	perl(MIME::Types) >= 1.15
 Requires:	perl-Catalyst >= 5.70
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-buildroot
 
 %description
 The Static::Simple plugin is designed to make serving static content
