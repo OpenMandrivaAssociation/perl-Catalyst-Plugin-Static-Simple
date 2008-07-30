@@ -3,7 +3,7 @@
 %define	modprefix Catalyst
 
 %define version	0.20
-%define release	%mkrel 1
+%define release	%mkrel 3
 
 Summary:	Make serving static pages painless
 Name:		%{name}
