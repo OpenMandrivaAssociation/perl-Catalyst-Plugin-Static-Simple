@@ -2,8 +2,8 @@
 %define name	perl-%{module}
 %define	modprefix Catalyst
 
-%define version	0.20
-%define release	%mkrel 3
+%define version	0.21
+%define release	%mkrel 1
 
 Summary:	Make serving static pages painless
 Name:		%{name}
