@@ -13,14 +13,11 @@ License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}/
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.gz
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
 BuildRequires:	perl(Catalyst) >= 5.70
 BuildRequires:	perl(MIME::Types) >= 1.15
-Requires:	perl-Catalyst >= 5.70
+BuildRequires:	perl(MRO::Compat)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-buildroot
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 The Static::Simple plugin is designed to make serving static content
@@ -37,11 +34,9 @@ through Catalyst.
 
 %prep
 %setup -q -n %{module}-%{version}
-##sed -i.DOS -e 's/\r//g' Changes
-##sed -i.DOS -e 's/\r//g' README
 
 %build
-%__perl Makefile.PL installdirs=vendor
+%__perl Makefile.PL installdirs=vendor --skipdeps
 %make
 
 %check
