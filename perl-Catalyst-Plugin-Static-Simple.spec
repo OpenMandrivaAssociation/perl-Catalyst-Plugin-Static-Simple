@@ -1,23 +1,21 @@
-%define module	Catalyst-Plugin-Static-Simple
-%define name	perl-%{module}
-%define	modprefix Catalyst
+%define upstream_name	 Catalyst-Plugin-Static-Simple
+%define upstream_version 0.21
 
-%define version	0.21
-%define release	%mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Make serving static pages painless
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(Catalyst) >= 5.70
 BuildRequires:	perl(MIME::Types) >= 1.15
 BuildRequires:	perl(MRO::Compat)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The Static::Simple plugin is designed to make serving static content
@@ -33,7 +31,7 @@ through Catalyst.
 
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL installdirs=vendor --skipdeps
@@ -46,12 +44,11 @@ make test
 %{__rm} -rf %{buildroot}
 %makeinstall_std
 
+%clean
+rm -rf %{buildroot}
+
 %files
 %defattr(-,root,root)
 %doc Changes README
 %{_mandir}/*/*
 %{perl_vendorlib}/Catalyst
-
-%clean
-rm -rf %{buildroot}
-
