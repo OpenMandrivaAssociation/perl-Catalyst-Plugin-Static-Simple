@@ -12,6 +12,7 @@ Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl(Catalyst) >= 5.70
+BuildRequires:	perl(Class::Data::Inheritable)
 BuildRequires:	perl(MIME::Types) >= 1.15
 BuildRequires:	perl(MRO::Compat)
 BuildArch:	noarch
