@@ -1,5 +1,5 @@
 %define upstream_name	 Catalyst-Plugin-Static-Simple
-%define upstream_version 0.22
+%define upstream_version 0.25
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -50,6 +50,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc Changes README
+%doc Changes
 %{_mandir}/*/*
 %{perl_vendorlib}/Catalyst
