@@ -2,14 +2,14 @@
 %define upstream_version 0.30
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.30
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Make serving static pages painless
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Catalyst/Catalyst-Plugin-Static-Simple-0.30.tar.gz
+Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Catalyst/Catalyst-Plugin-Static-Simple-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Catalyst) >= 5.70
@@ -119,5 +119,6 @@ make test
 
 * Thu Jun 29 2006 Scott Karns <scott@karnstech.com> 0.14-1mdv2007.0
 - Initial Mandriva RPM
+
 
 
