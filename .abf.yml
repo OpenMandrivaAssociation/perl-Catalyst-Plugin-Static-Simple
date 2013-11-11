@@ -1,4 +1,5 @@
 removed_sources:
   Catalyst-Plugin-Static-Simple-0.29.tar.gz: c4c2974ace32eb8e37f8059305508ceef5dcded5
-sources:
   Catalyst-Plugin-Static-Simple-0.30.tar.gz: c4451d40dda0ba8d3faff956a4a59847a3c92803
+sources:
+  Catalyst-Plugin-Static-Simple-0.31.tar.gz: d7945c3c95b3d7d98ca40c6d02aa975c6a772baa

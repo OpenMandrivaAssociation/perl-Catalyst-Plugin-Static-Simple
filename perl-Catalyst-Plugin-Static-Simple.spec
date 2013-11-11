@@ -1,5 +1,5 @@
 %define upstream_name	 Catalyst-Plugin-Static-Simple
-%define upstream_version 0.30
+%define upstream_version 0.31
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -119,6 +119,7 @@ make test
 
 * Thu Jun 29 2006 Scott Karns <scott@karnstech.com> 0.14-1mdv2007.0
 - Initial Mandriva RPM
+
 
 
 
