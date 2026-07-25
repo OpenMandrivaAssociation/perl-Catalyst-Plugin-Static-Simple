@@ -1,16 +1,16 @@
 %define upstream_name	 Catalyst-Plugin-Static-Simple
-%define upstream_version 0.32
+%define upstream_version 0.38
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Make serving static pages painless
 
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/perl-catalyst/Catalyst-Plugin-Static-Simple
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Catalyst-Plugin-Static-Simple-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
